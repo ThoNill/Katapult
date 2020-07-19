@@ -1,0 +1,49 @@
+ 
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+allprojects {
+
+ repositories {
+    mavenLocal()
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+ }
+
+ compileJava.options.encoding = 'UTF-8'
+ tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+ }
+
+
+}
+
+
+
+subprojects {
+    version = '1.0'
+    
+    
+}
+
+project(':kassenversand:backend') {
+    dependencies {
+        project(':kassenversand:modell')
+    }
+}
+
+project(':preislisten:backend') {
+    dependencies {
+        project(':preislisten:modell')
+    }
+}
+
+project(':datenlieferungen:backend') {
+    dependencies {
+       project(':datenlieferungen:modell')
+    }
+}
+

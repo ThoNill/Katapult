@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>tho.nill</groupId>
+	<artifactId>kataput.verordnungen.backend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Verordnungen Backend</name>
+	<description>Verordnungen Backend</description>
+<!-- <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.6.RELEASE</version>
+		<relativePath />
+	</parent>
+-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+	</properties>
+
+	<dependencies>
+	<dependency>
+			<groupId>javax.money</groupId>
+			<artifactId>money-api</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney.moneta</groupId>
+			<artifactId>moneta-core</artifactId>
+			<version>1.2.1</version>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>tho.nill</groupId>
+			<artifactId>Vorlagen-vorlagen</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tho.nill</groupId>
+			<artifactId>katapult.verordnungen.modell</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<defaultGoal>tho.nill:Vorlagen-maven-plugin:generateFromObjectModel@generateEntities</defaultGoal>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+
+			<plugin>
+				<groupId>tho.nill</groupId>
+				<artifactId>Vorlagen-maven-plugin</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<extensions>true</extensions>
+				<inherited>true</inherited>
+				<dependencies>
+					<dependency>
+						<groupId>tho.nill</groupId>
+						<artifactId>katapult.verordnungen.modell</artifactId>
+						<version>0.0.1-SNAPSHOT</version>
+					</dependency>
+					<dependency>
+						<groupId>tho.nill</groupId>
+						<artifactId>katapult.verordnungen.modell</artifactId>
+						<version>0.0.1-SNAPSHOT</version>
+						<classifier>sources</classifier>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>generateEntities</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<doNothing>false</doNothing>
+							<sourceJarPaths>
+								<sourceJarPath>${settings.localRepository}\tho\nill\katapult.verordnungen.modell\0.0.1-SNAPSHOT\katapult.verordnungen.modell-0.0.1-SNAPSHOT-sources.jar</sourceJarPath>
+							</sourceJarPaths>
+							<modellDir>../modell/src/main/java</modellDir>
+							<templateDir>entity/single</templateDir>
+							<outputDir>src/main/java</outputDir>
+							<converterClass>tho.nill.verordnungen.simpleAttributes.Converters</converterClass>
+							<connectionClass>tho.nill.verordnungen.verknüpfungen.Verknüpfungen</connectionClass>
+							<modelClasses>
+								<modelClass>tho.nill.verordnungen.modelle.Kasse</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.Kunde</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.RechnungKopf</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.RechnungPosition</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Kopf</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Position</modelClass>
+
+							</modelClasses>
+						</configuration>
+						<goals>
+							<goal>generateFromObjectModel</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>generateServices</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<doNothing>true</doNothing>
+							<templateDir>services</templateDir>
+							<outputDir>src/main/java</outputDir>
+							<modelClasses>
+								<modelClass>tho.nill.verordnungen.services.ServiceDescriptions</modelClass>
+							</modelClasses>
+						</configuration>
+						<goals>
+							<goal>generateFromFreeformModel</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>

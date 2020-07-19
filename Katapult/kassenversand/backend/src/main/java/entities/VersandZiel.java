@@ -1,0 +1,273 @@
+package entities;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Enumerated;
+import javax.persistence.Lob;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+    import tho.nill.kassenversand.simpleAttributes.IK;
+    import tho.nill.kassenversand.simpleAttributes.IK;
+    import tho.nill.kassenversand.simpleAttributes.IK;
+    import tho.nill.kassenversand.simpleAttributes.DatenlieferungsArt;
+    import tho.nill.kassenversand.simpleAttributes.VerweisArt;
+    import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
+    import tho.nill.kassenversand.simpleAttributes.Bundesland;
+    import tho.nill.kassenversand.simpleAttributes.KVBezirk;
+    import tho.nill.kassenversand.simpleAttributes.Abrechnungscode;
+    import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
+    import tho.nill.kassenversand.simpleAttributes.Leistungserbringergruppe;
+
+    import entities.Kasse;
+
+    import entities.VersandZiel;
+
+
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "VERSANDZIEL",
+indexes = {@Index(name = "idx_von_ik", columnList="von_ik", unique = false)})
+@SequenceGenerator(name = "VERSANDZIEL_SEQ", sequenceName = "VERSANDZIEL_SEQ")
+public class VersandZiel  {
+
+    @EqualsAndHashCode.Include
+    @ToString.Include
+    @Basic
+    @Column(name = "VERSANDZIELID")
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VERSANDZIEL_SEQ")
+    private java.lang.Long VersandZielId;
+
+         
+        // Kind: (value)
+
+    		
+     		@Basic
+     	    @Column(name = "VON_IK")
+     	    @Convert(converter = tho.nill.kassenversand.simpleAttributes.IKAdapter.class)
+     	    private IK von_ik;
+
+
+     	    public IK getVon_ik() {
+     	    	return von_ik;
+     	    }
+
+     	    public void setVon_ik(IK value) {
+     	    	von_ik = value;
+     	    }
+
+         
+        // Kind: (value)
+
+
+     		@Basic
+     	    @Column(name = "NACH_IK")
+     	    @Convert(converter = tho.nill.kassenversand.simpleAttributes.IKAdapter.class)
+     	    private IK nach_ik;
+
+
+     	    public IK getNach_ik() {
+     	    	return nach_ik;
+     	    }
+
+     	    public void setNach_ik(IK value) {
+     	    	nach_ik = value;
+     	    }
+
+         
+        // Kind: (value)
+
+
+     		@Basic
+     	    @Column(name = "KOSTENTRÄGER")
+     	    @Convert(converter = tho.nill.kassenversand.simpleAttributes.IKAdapter.class)
+     	    private IK kostenträger;
+
+
+     	    public IK getKostenträger() {
+     	    	return kostenträger;
+     	    }
+
+     	    public void setKostenträger(IK value) {
+     	    	kostenträger = value;
+     	    }
+
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "ART")
+     	    private DatenlieferungsArt art;
+
+
+     	    public DatenlieferungsArt getArt() {
+     	    	return art;
+     	    }
+
+     	    public void setArt(DatenlieferungsArt value) {
+     	    	art = value;
+     	    }
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "VERWEIS")
+     	    private VerweisArt verweis;
+
+
+     	    public VerweisArt getVerweis() {
+     	    	return verweis;
+     	    }
+
+     	    public void setVerweis(VerweisArt value) {
+     	    	verweis = value;
+     	    }
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "MEDIUM")
+     	    private DFÜMedium medium;
+
+
+     	    public DFÜMedium getMedium() {
+     	    	return medium;
+     	    }
+
+     	    public void setMedium(DFÜMedium value) {
+     	    	medium = value;
+     	    }
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "LAND")
+     	    private Bundesland land;
+
+
+     	    public Bundesland getLand() {
+     	    	return land;
+     	    }
+
+     	    public void setLand(Bundesland value) {
+     	    	land = value;
+     	    }
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "BEZIRK")
+     	    private KVBezirk bezirk;
+
+
+     	    public KVBezirk getBezirk() {
+     	    	return bezirk;
+     	    }
+
+     	    public void setBezirk(KVBezirk value) {
+     	    	bezirk = value;
+     	    }
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "ABRECHNUNGSCODE")
+     	    private Abrechnungscode abrechnungscode;
+
+
+     	    public Abrechnungscode getAbrechnungscode() {
+     	    	return abrechnungscode;
+     	    }
+
+     	    public void setAbrechnungscode(Abrechnungscode value) {
+     	    	abrechnungscode = value;
+     	    }
+         
+        // Kind: (value)
+
+
+     		@Basic
+     	    @Column(name = "TARIFKENNZEICHEN")
+     	     @Convert(converter = tho.nill.kassenversand.simpleAttributes.TarifkennzeichenAdapter.class)
+     	    private Tarifkennzeichen tarifkennzeichen;
+
+
+     	    public Tarifkennzeichen getTarifkennzeichen() {
+     	    	return tarifkennzeichen;
+     	    }
+
+     	    public void setTarifkennzeichen(Tarifkennzeichen value) {
+     	    	tarifkennzeichen = value;
+     	    }
+
+         
+        // Kind: (enumeration)
+
+
+     	    @Enumerated
+     	    @Column(name = "LEISTUNGSERBRINGERGRUPPE")
+     	    private Leistungserbringergruppe leistungserbringergruppe;
+
+
+     	    public Leistungserbringergruppe getLeistungserbringergruppe() {
+     	    	return leistungserbringergruppe;
+     	    }
+
+     	    public void setLeistungserbringergruppe(Leistungserbringergruppe value) {
+     	    	leistungserbringergruppe = value;
+     	    }
+         
+        // Kind: (toone2many)
+
+     	  	@ManyToOne(fetch = FetchType.LAZY)
+     	    @JoinColumn(name = "Kasse_Id")
+     		private Kasse Kasse;
+
+
+     	    public void setKasse(Kasse value) {
+     	 	   Kasse = (Kasse) value;
+     	    }
+
+
+}
+
