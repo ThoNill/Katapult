@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import entities.Zertifikat;
 import tho.nill.datenlieferung.simpleAttributes.IK;
 
+
 @Repository
 public interface ZertifikatRepository extends JpaRepository<Zertifikat, Long> {
 

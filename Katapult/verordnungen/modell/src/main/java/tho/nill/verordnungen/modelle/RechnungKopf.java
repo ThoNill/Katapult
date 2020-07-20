@@ -1,8 +1,8 @@
 package tho.nill.verordnungen.modelle;
 
-import org.nill.vorlagen.compiler.model.ObjectModell;
 import javax.money.MonetaryAmount;
 
+import org.nill.vorlagen.compiler.model.ObjectModell;
 import org.nill.vorlagen.object.ddd.Aggregate;
 import org.nill.vorlagen.object.ddd.Entity;
 

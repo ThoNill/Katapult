@@ -1,8 +1,8 @@
 package tho.nill.verordnungen.simpleAttributes;
 
+import javax.money.MonetaryAmount;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import javax.money.MonetaryAmount;
 
 @Converter
 public class MoneyAdapter implements AttributeConverter<MonetaryAmount, Long> {

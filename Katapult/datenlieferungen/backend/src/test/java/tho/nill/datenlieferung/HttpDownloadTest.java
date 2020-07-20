@@ -27,7 +27,6 @@ import org.junit.Test;
 import lombok.extern.slf4j.Slf4j;
 import tho.nill.datenlieferung.allgemein.Verzeichnisse;
 
-@Slf4j
 public class HttpDownloadTest {
 	private static final String REMOTE_URL = "https://de.wikipedia.org/wiki/Wikipedia:Hauptseite";
 	// "https://trustcenter-data.itsg.de/dale/gesamt-pkcs.key"

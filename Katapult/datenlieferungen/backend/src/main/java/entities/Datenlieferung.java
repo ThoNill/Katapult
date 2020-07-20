@@ -29,6 +29,7 @@ import tho.nill.datenlieferung.simpleAttributes.DatenArt;
 import tho.nill.datenlieferung.simpleAttributes.IK;
 import tho.nill.datenlieferung.simpleAttributes.MonatJahr;
 
+
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(onlyExplicitlyIncluded = true)

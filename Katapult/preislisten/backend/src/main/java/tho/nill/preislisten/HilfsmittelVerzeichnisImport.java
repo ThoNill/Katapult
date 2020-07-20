@@ -1,6 +1,5 @@
 package tho.nill.preislisten;
 
-import java.io.File;
 import java.util.NoSuchElementException;
 
 import javax.persistence.EntityManager;

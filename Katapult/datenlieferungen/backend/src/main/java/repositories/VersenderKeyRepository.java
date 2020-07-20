@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import entities.VersenderKey;
 import tho.nill.datenlieferung.simpleAttributes.IK;
 
+
 @Repository
 public interface VersenderKeyRepository extends JpaRepository<VersenderKey, Long> {
 

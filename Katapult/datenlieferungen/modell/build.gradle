@@ -4,7 +4,7 @@
 
 plugins {
     id 'java'
-    id 'maven-publish'
+    id 'maven'
 }
 defaultTasks 'clean', 'publishToMavenLocal'
 
@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     implementation 'tho.nill:AngularSpringVorlagen:0.0.1-SNAPSHOT'
+    implementation 'tho.nill:JanusModelle:0.0.1-SNAPSHOT'
     testImplementation 'junit:junit:4.12'
 }
 
@@ -31,13 +32,7 @@ java {
     withSourcesJar()
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
+
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

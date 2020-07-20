@@ -18,6 +18,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import tho.nill.datenlieferung.simpleAttributes.IK;
+import tho.nill.datenlieferung.simpleAttributes.MonatJahr;
+
 
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)

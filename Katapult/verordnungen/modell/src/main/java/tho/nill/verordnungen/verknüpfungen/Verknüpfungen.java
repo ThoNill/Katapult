@@ -3,7 +3,6 @@ package tho.nill.verordnungen.verknüpfungen;
 import org.nill.vorlagen.compiler.model.ObjectModell;
 import org.nill.vorlagen.compiler.util.Connection;
 
-import tho.nill.verordnungen.modelle.Kasse;
 import tho.nill.verordnungen.modelle.RechnungKopf;
 import tho.nill.verordnungen.modelle.RechnungPosition;
 import tho.nill.verordnungen.modelle.Verordnung302Kopf;

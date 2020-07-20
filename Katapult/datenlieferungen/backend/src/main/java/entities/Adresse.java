@@ -17,6 +17,7 @@ import lombok.ToString;
 import tho.nill.datenlieferung.simpleAttributes.AdressArt;
 import tho.nill.datenlieferung.simpleAttributes.IK;
 
+
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString(onlyExplicitlyIncluded = true)

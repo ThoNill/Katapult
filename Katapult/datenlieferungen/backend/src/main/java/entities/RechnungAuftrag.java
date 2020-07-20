@@ -14,8 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -128,7 +126,6 @@ public class RechnungAuftrag {
 	}
 
 	// Kind: (toone2many)
-	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "Datenlieferung_Id")
 	private Datenlieferung Datenlieferung;

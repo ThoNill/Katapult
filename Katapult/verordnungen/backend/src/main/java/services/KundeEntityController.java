@@ -10,26 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.Kunde;
-
-import tho.nill.verordnungen.simpleAttributes.IK;
-
-import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
-
 import tho.nill.verordnungen.simpleAttributes.Abrechnungscode;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
+import tho.nill.verordnungen.simpleAttributes.IK;
+import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
 
 
 @RestController

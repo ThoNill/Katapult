@@ -9,9 +9,10 @@ import org.springframework.stereotype.Repository;
 
 import entities.Datenaustausch;
 import tho.nill.datenlieferung.simpleAttributes.DatenArt;
-import tho.nill.datenlieferung.simpleAttributes.IK;
 import tho.nill.datenlieferung.simpleAttributes.Richtung;
 import tho.nill.datenlieferung.simpleAttributes.Verbindungsart;
+import tho.nill.datenlieferung.simpleAttributes.IK;
+import tho.nill.datenlieferung.simpleAttributes.MonatJahr;
 
 @Repository
 public interface DatenaustauschRepository extends JpaRepository<Datenaustausch, Long> {

@@ -10,28 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.VersandZiel;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.DatenlieferungsArt;
-
-import tho.nill.kassenversand.simpleAttributes.VerweisArt;
-
-import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
-
-import tho.nill.kassenversand.simpleAttributes.Bundesland;
-
-import tho.nill.kassenversand.simpleAttributes.KVBezirk;
-
 import tho.nill.kassenversand.simpleAttributes.Abrechnungscode;
-
-import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
-
+import tho.nill.kassenversand.simpleAttributes.Bundesland;
+import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
+import tho.nill.kassenversand.simpleAttributes.DatenlieferungsArt;
+import tho.nill.kassenversand.simpleAttributes.IK;
+import tho.nill.kassenversand.simpleAttributes.KVBezirk;
 import tho.nill.kassenversand.simpleAttributes.Leistungserbringergruppe;
+import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
+import tho.nill.kassenversand.simpleAttributes.VerweisArt;
 
 
 

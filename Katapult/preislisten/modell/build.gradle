@@ -4,7 +4,7 @@
 
 plugins {
     id 'java'
-    id 'maven-publish'
+    id 'maven'
 }
 defaultTasks 'clean', 'publishToMavenLocal'
 
@@ -31,14 +31,6 @@ targetCompatibility = '11'
 
 java {
     withSourcesJar()
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
 }
 
 

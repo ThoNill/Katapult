@@ -1,6 +1,8 @@
 package services;
 import java.util.Optional;
 
+import javax.money.MonetaryAmount;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,23 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.Verordnung302Position;
-
-import java.lang.String;
-
-
-import javax.money.MonetaryAmount;
-
-import javax.money.MonetaryAmount;
-
 import tho.nill.verordnungen.simpleAttributes.MwstArt;
-
-import javax.money.MonetaryAmount;
-
-import javax.money.MonetaryAmount;
-
-import javax.money.MonetaryAmount;
-
-import javax.money.MonetaryAmount;
 
 
 

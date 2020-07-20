@@ -16,9 +16,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import tho.nill.datenlieferung.simpleAttributes.DatenArt;
-import tho.nill.datenlieferung.simpleAttributes.IK;
 import tho.nill.datenlieferung.simpleAttributes.Richtung;
 import tho.nill.datenlieferung.simpleAttributes.Verbindungsart;
+import tho.nill.datenlieferung.simpleAttributes.IK;
 
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)

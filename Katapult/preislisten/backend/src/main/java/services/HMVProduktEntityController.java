@@ -1,4 +1,5 @@
 package services;
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,26 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.HMVProdukt;
-
-import java.lang.Long;
-
-import java.lang.Long;
-
-import java.lang.Long;
-
-import java.lang.Long;
-
-import java.lang.Long;
-
-import java.lang.String;
-
-import org.nill.vorlagen.compiler.markerClasses.CharBLOB;
-
-import java.lang.String;
-
-import org.nill.vorlagen.compiler.markerClasses.CharBLOB;
-
-import java.time.LocalDate;
 
 
 

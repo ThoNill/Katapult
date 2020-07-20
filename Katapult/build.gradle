@@ -47,3 +47,9 @@ project(':datenlieferungen:backend') {
     }
 }
 
+project(':verordnungen:backend') {
+    dependencies {
+       project(':verordnungen:modell')
+    }
+}
+

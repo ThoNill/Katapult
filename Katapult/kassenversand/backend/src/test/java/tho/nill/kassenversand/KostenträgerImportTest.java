@@ -2,17 +2,15 @@ package tho.nill.kassenversand;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.io.IOException;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import entities.Kasse;
 import lombok.extern.slf4j.Slf4j;
@@ -26,8 +24,6 @@ import tho.nill.kassenversand.simpleAttributes.Leistungserbringergruppe;
 import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
 import tho.nill.kassenversand.versandziel.P302Ergebnis;
 import tho.nill.kassenversand.versandziel.VersandzielAbfrageDaten;
-
-import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Slf4j

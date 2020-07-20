@@ -8,35 +8,15 @@ import org.springframework.stereotype.Service;
 
 import entities.VersandZiel;
 import repositories.VersandZielRepository;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.DatenlieferungsArt;
-
-import tho.nill.kassenversand.simpleAttributes.VerweisArt;
-
-import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
-
-import tho.nill.kassenversand.simpleAttributes.Bundesland;
-
-import tho.nill.kassenversand.simpleAttributes.KVBezirk;
-
 import tho.nill.kassenversand.simpleAttributes.Abrechnungscode;
-
-import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
-
+import tho.nill.kassenversand.simpleAttributes.Bundesland;
+import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
+import tho.nill.kassenversand.simpleAttributes.DatenlieferungsArt;
+import tho.nill.kassenversand.simpleAttributes.IK;
+import tho.nill.kassenversand.simpleAttributes.KVBezirk;
 import tho.nill.kassenversand.simpleAttributes.Leistungserbringergruppe;
-
-
-
-import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import tho.nill.kassenversand.simpleAttributes.Tarifkennzeichen;
+import tho.nill.kassenversand.simpleAttributes.VerweisArt;
 
 @Service
 public class VersandZielEntityService  {

@@ -1,6 +1,7 @@
 package services;
 
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,75 +9,15 @@ import org.springframework.stereotype.Service;
 
 import entities.Kasse;
 import repositories.KasseRepository;
-
-import tho.nill.kassenversand.simpleAttributes.IK;
-
-import tho.nill.kassenversand.simpleAttributes.KasseArt;
-
-import tho.nill.kassenversand.simpleAttributes.KassenFunktion;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.time.LocalDate;
-
-import java.time.LocalDate;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
 import tho.nill.kassenversand.simpleAttributes.DFÜMedium;
-
 import tho.nill.kassenversand.simpleAttributes.DFÜParameter;
-
-import tho.nill.kassenversand.simpleAttributes.Übermittlungszeichensatz;
-
-import tho.nill.kassenversand.simpleAttributes.Komprimierungsart;
-
 import tho.nill.kassenversand.simpleAttributes.DFÜProtokoll;
-
-import java.lang.String;
-
-import java.lang.String;
-
-import java.lang.String;
-
+import tho.nill.kassenversand.simpleAttributes.IK;
+import tho.nill.kassenversand.simpleAttributes.KasseArt;
+import tho.nill.kassenversand.simpleAttributes.KassenFunktion;
+import tho.nill.kassenversand.simpleAttributes.Komprimierungsart;
+import tho.nill.kassenversand.simpleAttributes.Übermittlungszeichensatz;
 import tho.nill.kassenversand.simpleAttributes.Übertragungstage;
-
-import java.lang.String;
-
-
-
-import java.util.concurrent.atomic.AtomicLong;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @Service
 public class KasseEntityService  {

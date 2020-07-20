@@ -15,7 +15,8 @@ pluginManagement {
 
 rootProject.name = 'Katapult'
 
-include 'kassenversand:modell','datenlieferungen:modell','preislisten:modell','kassenversand:backend','preislisten:backend','datenlieferungen:backend'
+include 'verordnungen:modell','kassenversand:modell','datenlieferungen:modell','preislisten:modell',
+        'verordnungen:backend','kassenversand:backend','preislisten:backend','datenlieferungen:backend'
 
 
 

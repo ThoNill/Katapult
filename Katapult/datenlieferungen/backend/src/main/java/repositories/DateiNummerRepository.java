@@ -11,6 +11,7 @@ import entities.DateiNummer;
 import tho.nill.datenlieferung.simpleAttributes.DateiNummerArt;
 import tho.nill.datenlieferung.simpleAttributes.DatenArt;
 import tho.nill.datenlieferung.simpleAttributes.IK;
+import tho.nill.datenlieferung.simpleAttributes.MonatJahr;
 
 @Repository
 public interface DateiNummerRepository extends JpaRepository<DateiNummer, Long> {
