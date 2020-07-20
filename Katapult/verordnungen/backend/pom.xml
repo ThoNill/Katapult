@@ -99,7 +99,6 @@
 								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Kopf</modelClass>
 								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Position</modelClass>
 								<modelClass>tho.nill.verordnungen.modelle.Leistungserbringer</modelClass>
-
 							</modelClasses>
 						</configuration>
 						<goals>

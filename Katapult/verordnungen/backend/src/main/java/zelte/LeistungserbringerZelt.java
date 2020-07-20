@@ -116,11 +116,11 @@ public class LeistungserbringerZelt extends StandardZelt {
          
 
 
-     	    public LeistungserbringerCode getAbrechnungscode() {
-     	         return entity.getAbrechnungscode(); 
+     	    public LeistungserbringerCode getLeistungserbringercode() {
+     	         return entity.getLeistungserbringercode(); 
      	    }
-     	    public void setAbrechnungscodeWithString(String value) {
-     	        	entity.setAbrechnungscode(convertToLeistungserbringerCode( value));
+     	    public void setLeistungserbringercodeWithString(String value) {
+     	        	entity.setLeistungserbringercode(convertToLeistungserbringerCode( value));
      	        }
 
      	   public LeistungserbringerCode convertToLeistungserbringerCode(String value) {

@@ -42,24 +42,24 @@ public class LeistungserbringerEntityService  {
     		return repo.findById(id);
     	}
 
-    	public Leistungserbringer create(LeistungserbringerCode  abrechnungscode, long kunde 
+    	public Leistungserbringer create(LeistungserbringerCode  leistungserbringercode, long kunde 
     , long rechnungposition 
     , long verordnung302kopf 
     ) {
     		Leistungserbringer d = new Leistungserbringer();
-    		felderSetzen(d, abrechnungscode, kunde
+    		felderSetzen(d, leistungserbringercode, kunde
     , rechnungposition
     , verordnung302kopf
     );
     		return repo.save(d);
     	}
 
-    	public void update(long id, LeistungserbringerCode  abrechnungscode, long kunde 
+    	public void update(long id, LeistungserbringerCode  leistungserbringercode, long kunde 
     , long rechnungposition 
     , long verordnung302kopf 
     ) {
     		Leistungserbringer d = repo.getOne(id);
-    		felderSetzen(d, abrechnungscode, kunde
+    		felderSetzen(d, leistungserbringercode, kunde
     , rechnungposition
     , verordnung302kopf
     );
@@ -71,12 +71,12 @@ public class LeistungserbringerEntityService  {
     	}
 
     	private void felderSetzen(Leistungserbringer d, 
-    	LeistungserbringerCode  abrechnungscode, long kunde 
+    	LeistungserbringerCode  leistungserbringercode, long kunde 
     	, long rechnungposition 
     	, long verordnung302kopf 
 
     	) {
-    	d.setAbrechnungscode(abrechnungscode);
+    	d.setLeistungserbringercode(leistungserbringercode);
 
     	if (kunde > 0) {
     	   Optional<entities.Kunde> kundeEntity =  kundeRepo.findById(kunde);

@@ -5,13 +5,11 @@ import org.nill.vorlagen.object.ddd.Aggregate;
 import org.nill.vorlagen.object.ddd.Entity;
 
 import tho.nill.verordnungen.simpleAttributes.LeistungserbringerCode;
-import tho.nill.verordnungen.simpleAttributes.IK;
-import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
 import tho.nill.verordnungen.verknüpfungen.Verknüpfungen;
 
 public class Leistungserbringer extends ObjectModell implements Entity, Aggregate {
 	
-	public LeistungserbringerCode abrechnungscode;
+	public LeistungserbringerCode leistungserbringercode;
 	
 	public Leistungserbringer() throws Exception {
 		super();

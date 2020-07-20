@@ -45,7 +45,7 @@ public class Leistungserbringer  {
 
 
      	    @Enumerated
-     	    @Column(name = "ABRECHNUNGSCODE")
+     	    @Column(name = "LEISTUCODE")
      	    private LeistungserbringerCode abrechnungscode;
 
 

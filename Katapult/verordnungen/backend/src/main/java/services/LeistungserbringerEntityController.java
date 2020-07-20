@@ -34,7 +34,7 @@ public class LeistungserbringerEntityController  {
 
     	@CrossOrigin
     	@RequestMapping(path = "/entity/leistungserbringer/insert", produces = "application/json", method = RequestMethod.POST)
-    	public String create(@RequestParam(name = "abrechnungscode") LeistungserbringerCode abrechnungscode
+    	public String create(@RequestParam(name = "leistungserbringercode") LeistungserbringerCode leistungserbringercode
      // enumeration
     , @RequestParam(name = "kunde") long kunde // Kunde
      // toone2many
@@ -45,7 +45,7 @@ public class LeistungserbringerEntityController  {
     ) {
 
     		try {
-    			Leistungserbringer d = service.create(abrechnungscode, kunde, rechnungposition, verordnung302kopf);
+    			Leistungserbringer d = service.create(leistungserbringercode, kunde, rechnungposition, verordnung302kopf);
     			return DER_DATENSATZ_MIT_DER + d.getLeistungserbringerId() + " wurden erfolgreich angelegt";
     		} catch (Exception e) {
     			return "Beim Anlegen eines Leistungserbringer Datensatzes trat ein Fehler auf";
@@ -55,7 +55,7 @@ public class LeistungserbringerEntityController  {
     	@CrossOrigin
     	@RequestMapping(path = "/entity/leistungserbringer/update/{id}", produces = "application/json", method = RequestMethod.PUT)
     	public String update(@PathVariable(name = "id") long id,
-    	              @RequestParam(name = "abrechnungscode") LeistungserbringerCode abrechnungscode
+    	              @RequestParam(name = "leistungserbringercode") LeistungserbringerCode leistungserbringercode
     	               // enumeration
     	              , @RequestParam(name = "kunde") long kunde // Kunde
     	               // toone2many
@@ -66,7 +66,7 @@ public class LeistungserbringerEntityController  {
     ) {
 
     		try {
-    			service.update(id,abrechnungscode, kunde, rechnungposition, verordnung302kopf);
+    			service.update(id,leistungserbringercode, kunde, rechnungposition, verordnung302kopf);
     			return DER_DATENSATZ_MIT_DER + id + " wurden erfolgreich geändert";
     		} catch (Exception e) {
     			return "Beim Ändern des Leistungserbringer Datensatzes mit der " + id + " trat ein Fehler auf";
