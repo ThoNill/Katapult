@@ -13,13 +13,13 @@ public class VersandzielAbfrageDaten {
 	public IK ik;
 	public Bundesland land;
 	public KVBezirk   bezirk;
-	public Abrechnungscode abrechnungscode;
+	public LeistungserbringerCode abrechnungscode;
 	public Tarifkennzeichen tarifkennzeichen;
 	public Leistungserbringergruppe leistungserbringergruppe;
 
 	
 	public VersandzielAbfrageDaten(IK ik,Bundesland land, KVBezirk bezirk,
-			Abrechnungscode abrechnungscode, Tarifkennzeichen tarifkennzeichen,
+			LeistungserbringerCode abrechnungscode, Tarifkennzeichen tarifkennzeichen,
 			Leistungserbringergruppe leistungserbringergruppe) {
 		super();
 		this.ik = ik;

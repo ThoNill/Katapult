@@ -1,8 +1,6 @@
 package services;
 import java.util.Optional;
 
-import javax.money.MonetaryAmount;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +10,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.Verordnung302Kopf;
+
 import tho.nill.verordnungen.simpleAttributes.IK;
+
+import tho.nill.verordnungen.simpleAttributes.IK;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
 
 
 
@@ -49,12 +63,14 @@ public class Verordnung302KopfEntityController  {
      // value
     , @RequestParam(name = "zuzahlungMwstBetrag") MonetaryAmount zuzahlungMwstBetrag
      // value
+    , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+     // toone2many
     , @RequestParam(name = "verordnung302position") long verordnung302position // Verordnung302Position
      // fromone2many
     ) {
 
     		try {
-    			Verordnung302Kopf d = service.create(versichertenKarteIk, kostenträgerIk, zahlBetrag, bruttoBetrag, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, verordnung302position);
+    			Verordnung302Kopf d = service.create(versichertenKarteIk, kostenträgerIk, zahlBetrag, bruttoBetrag, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer, verordnung302position);
     			return DER_DATENSATZ_MIT_DER + d.getVerordnung302KopfId() + " wurden erfolgreich angelegt";
     		} catch (Exception e) {
     			return "Beim Anlegen eines Verordnung302Kopf Datensatzes trat ein Fehler auf";
@@ -80,12 +96,14 @@ public class Verordnung302KopfEntityController  {
     	               // value
     	              , @RequestParam(name = "zuzahlungMwstBetrag") MonetaryAmount zuzahlungMwstBetrag
     	               // value
+    	              , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+    	               // toone2many
     	              , @RequestParam(name = "verordnung302position") long verordnung302position // Verordnung302Position
     	               // fromone2many
     ) {
 
     		try {
-    			service.update(id,versichertenKarteIk, kostenträgerIk, zahlBetrag, bruttoBetrag, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, verordnung302position);
+    			service.update(id,versichertenKarteIk, kostenträgerIk, zahlBetrag, bruttoBetrag, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer, verordnung302position);
     			return DER_DATENSATZ_MIT_DER + id + " wurden erfolgreich geändert";
     		} catch (Exception e) {
     			return "Beim Ändern des Verordnung302Kopf Datensatzes mit der " + id + " trat ein Fehler auf";

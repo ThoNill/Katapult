@@ -10,9 +10,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.Kunde;
-import tho.nill.verordnungen.simpleAttributes.Abrechnungscode;
+
 import tho.nill.verordnungen.simpleAttributes.IK;
+
 import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
 
 
 @RestController
@@ -36,8 +52,6 @@ public class KundeEntityController  {
      // value
     , @RequestParam(name = "tarifbereich") Tarifbereich tarifbereich
      // enumeration
-    , @RequestParam(name = "abrechnungscode") Abrechnungscode abrechnungscode
-     // enumeration
     , @RequestParam(name = "ansprechpartner") String ansprechpartner
      // value
     , @RequestParam(name = "firma") String firma
@@ -52,10 +66,12 @@ public class KundeEntityController  {
      // value
     , @RequestParam(name = "email") String email
      // value
+    , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+     // fromone2many
     ) {
 
     		try {
-    			Kunde d = service.create(ik, tarifbereich, abrechnungscode, ansprechpartner, firma, plz, ort, straße, telefon, email);
+    			Kunde d = service.create(ik, tarifbereich, ansprechpartner, firma, plz, ort, straße, telefon, email, leistungserbringer);
     			return DER_DATENSATZ_MIT_DER + d.getKundeId() + " wurden erfolgreich angelegt";
     		} catch (Exception e) {
     			return "Beim Anlegen eines Kunde Datensatzes trat ein Fehler auf";
@@ -68,8 +84,6 @@ public class KundeEntityController  {
     	              @RequestParam(name = "ik") IK ik
     	               // value
     	              , @RequestParam(name = "tarifbereich") Tarifbereich tarifbereich
-    	               // enumeration
-    	              , @RequestParam(name = "abrechnungscode") Abrechnungscode abrechnungscode
     	               // enumeration
     	              , @RequestParam(name = "ansprechpartner") String ansprechpartner
     	               // value
@@ -85,10 +99,12 @@ public class KundeEntityController  {
     	               // value
     	              , @RequestParam(name = "email") String email
     	               // value
+    	              , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+    	               // fromone2many
     ) {
 
     		try {
-    			service.update(id,ik, tarifbereich, abrechnungscode, ansprechpartner, firma, plz, ort, straße, telefon, email);
+    			service.update(id,ik, tarifbereich, ansprechpartner, firma, plz, ort, straße, telefon, email, leistungserbringer);
     			return DER_DATENSATZ_MIT_DER + id + " wurden erfolgreich geändert";
     		} catch (Exception e) {
     			return "Beim Ändern des Kunde Datensatzes mit der " + id + " trat ein Fehler auf";

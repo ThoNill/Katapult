@@ -9,9 +9,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -181,6 +184,19 @@ public class Verordnung302Kopf  {
      	    public void setZuzahlungMwstBetrag(MonetaryAmount value) {
      	    	zuzahlungMwstBetrag = value;
      	    }
+
+         
+        // Kind: (toone2many)
+
+     	  	@ManyToOne(fetch = FetchType.LAZY)
+     	    @JoinColumn(name = "Leistungserbringer_Id")
+     		private Leistungserbringer Leistungserbringer;
+
+
+     	    public void setLeistungserbringer(Leistungserbringer value) {
+     	 	   Leistungserbringer = (Leistungserbringer) value;
+     	    }
+
 
          
         // Kind: (fromone2many)

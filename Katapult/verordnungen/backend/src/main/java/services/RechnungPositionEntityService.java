@@ -3,14 +3,33 @@ package services;
 
 import java.util.Optional;
 
-import javax.money.MonetaryAmount;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import entities.RechnungPosition;
 import repositories.RechnungPositionRepository;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
 import tho.nill.verordnungen.simpleAttributes.MwstArt;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+
+
+
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @Service
 public class RechnungPositionEntityService  {
@@ -18,6 +37,8 @@ public class RechnungPositionEntityService  {
     	@Autowired
     	RechnungPositionRepository repo;
 
+    	@Autowired
+    	repositories.LeistungserbringerRepository leistungserbringerRepo;
     	@Autowired
     	repositories.RechnungKopfRepository rechnungkopfRepo;
 
@@ -30,18 +51,22 @@ public class RechnungPositionEntityService  {
     		return repo.findById(id);
     	}
 
-    	public RechnungPosition create(MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long rechnungkopf 
+    	public RechnungPosition create(MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long leistungserbringer 
+    , long rechnungkopf 
     ) {
     		RechnungPosition d = new RechnungPosition();
-    		felderSetzen(d, zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, rechnungkopf
+    		felderSetzen(d, zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer
+    , rechnungkopf
     );
     		return repo.save(d);
     	}
 
-    	public void update(long id, MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long rechnungkopf 
+    	public void update(long id, MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long leistungserbringer 
+    , long rechnungkopf 
     ) {
     		RechnungPosition d = repo.getOne(id);
-    		felderSetzen(d, zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, rechnungkopf
+    		felderSetzen(d, zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer
+    , rechnungkopf
     );
     		repo.save(d);
     	}
@@ -51,7 +76,8 @@ public class RechnungPositionEntityService  {
     	}
 
     	private void felderSetzen(RechnungPosition d, 
-    	MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long rechnungkopf 
+    	MonetaryAmount  zahlBetrag, MonetaryAmount  bruttoBetrag, MwstArt  mwstArt, MonetaryAmount  mwstBetrag, MonetaryAmount  rabattBetrag, MonetaryAmount  zuzahlungBetrag, MonetaryAmount  zuzahlungMwstBetrag, long leistungserbringer 
+    	, long rechnungkopf 
 
     	) {
     	d.setZahlBetrag(zahlBetrag);
@@ -62,6 +88,12 @@ public class RechnungPositionEntityService  {
     	d.setZuzahlungBetrag(zuzahlungBetrag);
     	d.setZuzahlungMwstBetrag(zuzahlungMwstBetrag);
 
+    	if (leistungserbringer > 0) {
+    	   Optional<entities.Leistungserbringer> leistungserbringerEntity =  leistungserbringerRepo.findById(leistungserbringer);
+    	   if (leistungserbringerEntity.isPresent()) {
+    	   	  d.setLeistungserbringer(leistungserbringerEntity.get());
+    	   }
+    	}  
     	if (rechnungkopf > 0) {
     	   Optional<entities.RechnungKopf> rechnungkopfEntity =  rechnungkopfRepo.findById(rechnungkopf);
     	   if (rechnungkopfEntity.isPresent()) {

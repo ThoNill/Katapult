@@ -178,7 +178,7 @@ public enum Abrechnungscode  {
 
 
 	public static Abrechnungscode search(String code) {
-		for ( Abrechnungscode o  : Abrechnungscode.values() ) {
+		for ( LeistungserbringerCode o  : LeistungserbringerCode.values() ) {
 			if (code.equals(o.getCode())) {
 				return o;
 			}

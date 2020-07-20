@@ -1,8 +1,6 @@
 package services;
 import java.util.Optional;
 
-import javax.money.MonetaryAmount;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,7 +10,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.RechnungPosition;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
 import tho.nill.verordnungen.simpleAttributes.MwstArt;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
+import javax.money.MonetaryAmount;
+
 
 
 
@@ -47,12 +59,14 @@ public class RechnungPositionEntityController  {
      // value
     , @RequestParam(name = "zuzahlungMwstBetrag") MonetaryAmount zuzahlungMwstBetrag
      // value
+    , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+     // toone2many
     , @RequestParam(name = "rechnungkopf") long rechnungkopf // RechnungKopf
      // toone2many
     ) {
 
     		try {
-    			RechnungPosition d = service.create(zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, rechnungkopf);
+    			RechnungPosition d = service.create(zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer, rechnungkopf);
     			return DER_DATENSATZ_MIT_DER + d.getRechnungPositionId() + " wurden erfolgreich angelegt";
     		} catch (Exception e) {
     			return "Beim Anlegen eines RechnungPosition Datensatzes trat ein Fehler auf";
@@ -76,12 +90,14 @@ public class RechnungPositionEntityController  {
     	               // value
     	              , @RequestParam(name = "zuzahlungMwstBetrag") MonetaryAmount zuzahlungMwstBetrag
     	               // value
+    	              , @RequestParam(name = "leistungserbringer") long leistungserbringer // Leistungserbringer
+    	               // toone2many
     	              , @RequestParam(name = "rechnungkopf") long rechnungkopf // RechnungKopf
     	               // toone2many
     ) {
 
     		try {
-    			service.update(id,zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, rechnungkopf);
+    			service.update(id,zahlBetrag, bruttoBetrag, mwstArt, mwstBetrag, rabattBetrag, zuzahlungBetrag, zuzahlungMwstBetrag, leistungserbringer, rechnungkopf);
     			return DER_DATENSATZ_MIT_DER + id + " wurden erfolgreich geändert";
     		} catch (Exception e) {
     			return "Beim Ändern des RechnungPosition Datensatzes mit der " + id + " trat ein Fehler auf";

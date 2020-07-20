@@ -1,6 +1,10 @@
 package entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.Entity;
@@ -8,13 +12,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import tho.nill.verordnungen.simpleAttributes.Abrechnungscode;
 import tho.nill.verordnungen.simpleAttributes.IK;
 import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
 
@@ -68,22 +72,6 @@ public class Kunde  {
 
      	    public void setTarifbereich(Tarifbereich value) {
      	    	tarifbereich = value;
-     	    }
-         
-        // Kind: (enumeration)
-
-
-     	    @Enumerated
-     	    @Column(name = "ABRECHNUNGSCODE")
-     	    private Abrechnungscode abrechnungscode;
-
-
-     	    public Abrechnungscode getAbrechnungscode() {
-     	    	return abrechnungscode;
-     	    }
-
-     	    public void setAbrechnungscode(Abrechnungscode value) {
-     	    	abrechnungscode = value;
      	    }
          
         // Kind: (value)
@@ -203,6 +191,30 @@ public class Kunde  {
      	    public void setEmail(String value) {
      	    	email = value;
      	    }
+
+         
+        // Kind: (fromone2many)
+
+
+     	    @OneToMany(cascade = CascadeType.ALL, 
+     	               mappedBy = "Kunde", 
+     	               orphanRemoval = true
+     	               )
+     	    private Set<Leistungserbringer> Leistungserbringer = new HashSet<>();
+
+
+
+     	    public void addLeistungserbringer(Leistungserbringer x) {
+     	        this.Leistungserbringer.add((Leistungserbringer)x);
+     	        x.setKunde(this);
+     	    }
+
+
+     	    public void removeLeistungserbringer(Leistungserbringer x) {
+     	        this.Leistungserbringer.remove((Leistungserbringer)x);
+     	        x.setKunde(null);
+     	    }
+
 
 }
 

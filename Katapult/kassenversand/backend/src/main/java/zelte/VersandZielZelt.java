@@ -151,15 +151,15 @@ public class VersandZielZelt extends StandardZelt {
      				}   
 
 
-     	    public Abrechnungscode getAbrechnungscode() {
+     	    public LeistungserbringerCode getAbrechnungscode() {
      	         return entity.getAbrechnungscode(); 
      	    }
      	    public void setAbrechnungscodeWithString(String value) {
      	        	entity.setAbrechnungscode(convertToAbrechnungscode( value));
      	        }
 
-     	   public Abrechnungscode convertToAbrechnungscode(String value) {
-     					return Abrechnungscode.search(value);
+     	   public LeistungserbringerCode convertToAbrechnungscode(String value) {
+     					return LeistungserbringerCode.search(value);
      				}   
 
 

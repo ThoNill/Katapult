@@ -71,7 +71,7 @@ public class KostenträgerImportTest {
 
 		VersandzielAbfrageDaten abfrage = new VersandzielAbfrageDaten(new IK(101320032),
 				Bundesland.Baden_Württemberg_08, KVBezirk.Koblenz_47,
-				Abrechnungscode.Ergotherapeut_26, new Tarifkennzeichen("00"), Leistungserbringergruppe.Sonstige_5);
+				LeistungserbringerCode.Ergotherapeut_26, new Tarifkennzeichen("00"), Leistungserbringergruppe.Sonstige_5);
 
 		P302Ergebnis erg = kostenträgerInfoService.service(abfrage);
 		assertEquals(new IK(101320032), erg.getVersichertenkarte());

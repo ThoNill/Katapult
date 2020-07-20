@@ -8,9 +8,31 @@ import org.springframework.stereotype.Service;
 
 import entities.Kunde;
 import repositories.KundeRepository;
-import tho.nill.verordnungen.simpleAttributes.Abrechnungscode;
+
 import tho.nill.verordnungen.simpleAttributes.IK;
+
 import tho.nill.verordnungen.simpleAttributes.Tarifbereich;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+
+
+import java.util.concurrent.atomic.AtomicLong;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 @Service
 public class KundeEntityService  {
@@ -18,6 +40,8 @@ public class KundeEntityService  {
     	@Autowired
     	KundeRepository repo;
 
+    	@Autowired
+    	repositories.LeistungserbringerRepository leistungserbringerRepo;
 
 
     	public KundeEntityService() {
@@ -28,15 +52,19 @@ public class KundeEntityService  {
     		return repo.findById(id);
     	}
 
-    	public Kunde create(IK  ik, Tarifbereich  tarifbereich, Abrechnungscode  abrechnungscode, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email) {
+    	public Kunde create(IK  ik, Tarifbereich  tarifbereich, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email, long leistungserbringer 
+    ) {
     		Kunde d = new Kunde();
-    		felderSetzen(d, ik, tarifbereich, abrechnungscode, ansprechpartner, firma, plz, ort, straße, telefon, email);
+    		felderSetzen(d, ik, tarifbereich, ansprechpartner, firma, plz, ort, straße, telefon, email, leistungserbringer
+    );
     		return repo.save(d);
     	}
 
-    	public void update(long id, IK  ik, Tarifbereich  tarifbereich, Abrechnungscode  abrechnungscode, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email) {
+    	public void update(long id, IK  ik, Tarifbereich  tarifbereich, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email, long leistungserbringer 
+    ) {
     		Kunde d = repo.getOne(id);
-    		felderSetzen(d, ik, tarifbereich, abrechnungscode, ansprechpartner, firma, plz, ort, straße, telefon, email);
+    		felderSetzen(d, ik, tarifbereich, ansprechpartner, firma, plz, ort, straße, telefon, email, leistungserbringer
+    );
     		repo.save(d);
     	}
 
@@ -45,11 +73,11 @@ public class KundeEntityService  {
     	}
 
     	private void felderSetzen(Kunde d, 
-    	IK  ik, Tarifbereich  tarifbereich, Abrechnungscode  abrechnungscode, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email
+    	IK  ik, Tarifbereich  tarifbereich, String  ansprechpartner, String  firma, String  plz, String  ort, String  straße, String  telefon, String  email, long leistungserbringer 
+
     	) {
     	d.setIk(ik);
     	d.setTarifbereich(tarifbereich);
-    	d.setAbrechnungscode(abrechnungscode);
     	d.setAnsprechpartner(ansprechpartner);
     	d.setFirma(firma);
     	d.setPlz(plz);
@@ -57,7 +85,13 @@ public class KundeEntityService  {
     	d.setStraße(straße);
     	d.setTelefon(telefon);
     	d.setEmail(email);
-    	
+
+    	if (leistungserbringer > 0) {
+    	    Optional<entities.Leistungserbringer> leistungserbringerEntity =  leistungserbringerRepo.findById(leistungserbringer);
+    	    if (leistungserbringerEntity.isPresent()) {
+    	       d.addLeistungserbringer(leistungserbringerEntity.get());
+    	    }
+    	}	
     	}
 
 

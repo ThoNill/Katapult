@@ -165,6 +165,19 @@ public class RechnungPosition  {
         // Kind: (toone2many)
 
      	  	@ManyToOne(fetch = FetchType.LAZY)
+     	    @JoinColumn(name = "Leistungserbringer_Id")
+     		private Leistungserbringer Leistungserbringer;
+
+
+     	    public void setLeistungserbringer(Leistungserbringer value) {
+     	 	   Leistungserbringer = (Leistungserbringer) value;
+     	    }
+
+
+         
+        // Kind: (toone2many)
+
+     	  	@ManyToOne(fetch = FetchType.LAZY)
      	    @JoinColumn(name = "RechnungKopf_Id")
      		private RechnungKopf RechnungKopf;
 

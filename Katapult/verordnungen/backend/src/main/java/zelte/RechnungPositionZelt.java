@@ -1,10 +1,93 @@
 package zelte;
 
-import javax.money.MonetaryAmount;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.List;
 
-import entities.RechnungPosition;
-import repositories.RechnungPositionRepository;
-import tho.nill.verordnungen.simpleAttributes.MwstArt;
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.ElementCollection;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Enumerated;
+import javax.persistence.Lob;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import entities.*;
+
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import tho.nill.verordnungen.simpleAttributes.MwstArt;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+    import javax.money.MonetaryAmount;
+
+
+    import entities.RechnungPosition;
+    import repositories.RechnungPositionRepository;
+
+    import entities.Leistungserbringer;
+    import repositories.LeistungserbringerRepository;
+
+    import entities.RechnungPosition;
+    import zelte.RechnungPositionZelt;
+    import entities.RechnungKopf;
+    import repositories.RechnungKopfRepository;
+
+    import entities.RechnungPosition;
+    import zelte.RechnungPositionZelt;
+
+
+import zelte.StandardZelt;
 
 public class RechnungPositionZelt extends StandardZelt {
 
@@ -121,6 +204,8 @@ public class RechnungPositionZelt extends StandardZelt {
      	    public void setZuzahlungMwstBetragWithString(String value) {
      	        	entity.setZuzahlungMwstBetrag(convertToMonetaryAmount( value));
      	        }
+         
+
          
 
 

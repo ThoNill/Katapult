@@ -1,5 +1,4 @@
 package services;
-import java.time.LocalDate;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +10,56 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import entities.Kasse;
+
 import tho.nill.verordnungen.simpleAttributes.IK;
+
 import tho.nill.verordnungen.simpleAttributes.KasseArt;
+
 import tho.nill.verordnungen.simpleAttributes.KassenFunktion;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.time.LocalDate;
+
+import java.time.LocalDate;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
+
+import java.lang.String;
 
 
 @RestController

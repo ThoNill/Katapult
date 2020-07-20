@@ -3,7 +3,7 @@ package tho.nill.verordnungen.simpleAttributes;
 
 
 /* Schlüssel Abrechnungscode */
-public enum Abrechnungscode  {
+public enum LeistungserbringerCode  {
 
 	/* Sammelschlüssel für alle Leistungsarten */
 	 Sammelschlüssel_00("00"), 
@@ -168,7 +168,7 @@ public enum Abrechnungscode  {
 
 	private String code;
 
-	private Abrechnungscode(String code) {
+	private LeistungserbringerCode(String code) {
 		this.code = code;
 	}
 
@@ -177,8 +177,8 @@ public enum Abrechnungscode  {
 	}
 
 
-	public static Abrechnungscode search(String code) {
-		for ( Abrechnungscode o  : Abrechnungscode.values() ) {
+	public static LeistungserbringerCode search(String code) {
+		for ( LeistungserbringerCode o  : LeistungserbringerCode.values() ) {
 			if (code.equals(o.getCode())) {
 				return o;
 			}

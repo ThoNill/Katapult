@@ -9,13 +9,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Verordnungen Backend</name>
 	<description>Verordnungen Backend</description>
-<!-- <parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.6.RELEASE</version>
-		<relativePath />
-	</parent>
--->
+	<!-- <parent> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId> 
+		<version>2.2.6.RELEASE</version> <relativePath /> </parent> -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -23,7 +18,7 @@
 	</properties>
 
 	<dependencies>
-	<dependency>
+		<dependency>
 			<groupId>javax.money</groupId>
 			<artifactId>money-api</artifactId>
 			<version>1.1</version>
@@ -103,6 +98,7 @@
 								<modelClass>tho.nill.verordnungen.modelle.RechnungPosition</modelClass>
 								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Kopf</modelClass>
 								<modelClass>tho.nill.verordnungen.modelle.Verordnung302Position</modelClass>
+								<modelClass>tho.nill.verordnungen.modelle.Leistungserbringer</modelClass>
 
 							</modelClasses>
 						</configuration>

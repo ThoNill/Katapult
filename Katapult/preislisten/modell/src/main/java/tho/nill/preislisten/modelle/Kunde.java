@@ -13,7 +13,7 @@ public class Kunde extends ObjectModell implements Entity, Aggregate {
 	
 	public IK ik;
 	public Tarifbereich tarifbereich;
-	public Abrechnungscode abrechnungscode;
+	public LeistungserbringerCode abrechnungscode;
 	public String ansprechpartner;
 	public String firma;
 	public String plz;
