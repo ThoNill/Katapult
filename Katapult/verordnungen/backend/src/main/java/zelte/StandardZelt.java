@@ -5,6 +5,7 @@ import javax.money.MonetaryAmount;
 import tho.nill.grundgestein.zelt.EntityZelt;
 import tho.nill.verordnungen.simpleAttributes.Geld;
 import tho.nill.verordnungen.simpleAttributes.IK;
+import tho.nill.verordnungen.simpleAttributes.LeistungserbringerCode;
 import tho.nill.verordnungen.simpleAttributes.Tarifkennzeichen;
 
 public class StandardZelt implements EntityZelt {
@@ -35,8 +36,8 @@ public class StandardZelt implements EntityZelt {
 	protected Tarifkennzeichen convertToTarifkennzeichen(String value) {
 		return new Tarifkennzeichen(value);
 	}
-	
-	
+
+
 	protected MonetaryAmount convertToMonetaryAmount(String value) {
 		return Geld.createAmount(Double.parseDouble(value.strip()));
 	}

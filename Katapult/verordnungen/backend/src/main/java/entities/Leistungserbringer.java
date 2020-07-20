@@ -45,16 +45,16 @@ public class Leistungserbringer  {
 
 
      	    @Enumerated
-     	    @Column(name = "LEISTUCODE")
-     	    private LeistungserbringerCode abrechnungscode;
+     	    @Column(name = "LEISTUNGSERBRINGERCODE")
+     	    private LeistungserbringerCode leistungserbringercode;
 
 
-     	    public LeistungserbringerCode getAbrechnungscode() {
-     	    	return abrechnungscode;
+     	    public LeistungserbringerCode getLeistungserbringercode() {
+     	    	return leistungserbringercode;
      	    }
 
-     	    public void setAbrechnungscode(LeistungserbringerCode value) {
-     	    	abrechnungscode = value;
+     	    public void setLeistungserbringercode(LeistungserbringerCode value) {
+     	    	leistungserbringercode = value;
      	    }
          
         // Kind: (toone2many)
